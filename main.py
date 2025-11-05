@@ -79,8 +79,4 @@ def predict(data: F1Features):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"An error occurred during prediction: {str(e)}")
 
-# --- Blok Uvicorn Run ---
-# Blok ini memungkinkan Anda menjalankan script dengan `python main.py`
-if __name__ == "__main__":
-    # Perintah yang Anda minta
-    uvicorn.run("main:app", host="0.0.0.0", port=8000)
+
