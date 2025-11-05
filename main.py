@@ -85,6 +85,19 @@ async def test():
     """Simple test endpoint."""
     return {"message": "API is working!", "test": "success"}
 
+@app.get("/predict")
+async def predict_info():
+    """Info about predict endpoint."""
+    return {
+        "message": "Use POST method to make predictions",
+        "method": "POST",
+        "endpoint": "/predict",
+        "example": {
+            "features": [1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 
+                        11.0, 12.0, 13.0, 14.0, 15.0, 16.0, 17.0, 18.0, 19.0, 20.0]
+        }
+    }
+
 @app.post("/predict")
 async def predict(data: F1Features):
     """Receives feature data and returns win probability."""
